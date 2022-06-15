@@ -17,7 +17,6 @@ function App() {
       setLocation("")
     }
   }
-  
   return (
     <div className="app">
       <div className="search">
@@ -42,6 +41,7 @@ function App() {
           </div>
         </div>
 
+      {data.name !== undefined &&
         <div className="bottom">
           <div className="feels">
             {data.main ? <p className='bold'>{parseFloat(data.main.feels_like - 273.15).toFixed(1)}℃</p> : null}
@@ -52,10 +52,11 @@ function App() {
             <p className="bold">Humidity</p>
           </div>
           <div className="wind">
-          {data.wind ? <p className='bold'>{data.wind.speed} MPH</p> : null}
+            {data.wind ? <p className='bold'>{data.wind.speed} MPH</p> : null}
             <p className="bold">Wind Speed</p>
           </div>
         </div>
+      }
       </div>
     </div>
   );
