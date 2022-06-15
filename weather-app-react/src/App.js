@@ -34,17 +34,17 @@ function App() {
             <p>{data.name}</p>
           </div>
           <div className="temp">
-            {data.main ? <h1>{data.main.temp}℉</h1> : null}
+            {data.main ? <h1>{parseFloat(data.main.temp - 273.15).toFixed(1)}℃</h1> : null}
             {/* <h1>{data.main.temp}℃</h1> */}
           </div>
           <div className="description">
             {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
         </div>
-        
+
         <div className="bottom">
           <div className="feels">
-            {data.main ? <p className='bold'>{data.main.feels_like}℉</p> : null}
+            {data.main ? <p className='bold'>{parseFloat(data.main.feels_like - 273.15).toFixed(1)}℃</p> : null}
             <p className="bold">Feels like</p>
           </div>
           <div className="humidity">
