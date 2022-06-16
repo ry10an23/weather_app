@@ -41,6 +41,18 @@ h1 {
   z-index: -1;
 }
 
+.app .dawn {
+  background: url('./img/dawn.jpg') no-repeat center center/cover;
+}
+
+.app.morning {
+  background: url('./img/daytime.jpg') no-repeat center center/cover;
+}
+
+.app .night {
+  background: url('./img/night.jpg') no-repeat center center/cover;
+}
+
 .app .search {
   text-align: center;
   padding: 1rem;
@@ -53,6 +65,10 @@ h1 {
   border: 1px solid rgba(255, 255, 255, .8);
   background: rgba(255, 255, 255, .1);
   color: #f8f8f8;
+}
+
+.app input:focus {
+  background: rgba(255, 255, 255, .4);
 }
 
 ::placeholder {
@@ -77,10 +93,11 @@ h1 {
 }
 
 .app .description {
+  border: 1px solid green;
   position: relative;
-  right: -90%;
+  /* right: -90%; */
   transform-origin: 0 0;
-  transform: rotate(270deg);
+  /* transform: rotate(270deg); */
 }
 
 .app .bottom {
