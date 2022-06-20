@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import axios from 'axios';
 import moment from 'moment';
-const tz = require('moment-timezone');
 
 function App() {
 
@@ -20,7 +19,14 @@ function App() {
     }
   }
   return (
-    <div className="app">
+    <div className={(typeof data.weather != "undefined") ? 
+    ((data.weather[0].main === "Clear") ? "app clear" :
+     (data.weather[0].main === "Clouds") ? "app clouds" :
+     (data.weather[0].main === "Rain" || data.weather[0].main === "Drizzle") ? "app rain" :
+     (data.weather[0].main === "Fog") ? "app fog" :
+     (data.weather[0].main === "Fog" || data.weather[0].main === "Haze" || data.weather[0].main === "Dust") ? "app fog" :
+     (data.weather[0].main === "Thunderstorm") ? "app thunder" :
+     (data.weather[0].main === "Snow") ? "app snow" : "app") : "app" }>
       <div className="search">
         <input 
         value={location} 
@@ -33,13 +39,12 @@ function App() {
         <div className="top">
           <div className="location">
             <p>{data.name}</p>
-            <p>{moment(data.dt, "X").tz(data.timezone).format("hh:mm A")}</p>
           </div>
           <div className="temp">
             {data.main ? <h1>{parseFloat(data.main.temp - 273.15).toFixed(1)}℃</h1> : null}
           </div>
           <div className="description">
-            {data.weather ? <p>{data.weather[0].main}</p> : null}
+            {data.weather ? <p>{data.weather[0].icon}</p> : null}
           </div>
         </div>
 
