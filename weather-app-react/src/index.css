@@ -32,7 +32,7 @@ h1 {
 
 .app:before {
   content: '';
-  background: url('./img/sunset.jpg') no-repeat center center/cover;
+  background: url('./img/night.jpg') no-repeat center center/cover;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -41,16 +41,25 @@ h1 {
   z-index: -1;
 }
 
-.app .dawn {
-  background: url('./img/dawn.jpg') no-repeat center center/cover;
+.clear {
+  background: url('./img/sunny.jpg') no-repeat center center/cover;
 }
 
-.app.morning {
-  background: url('./img/daytime.jpg') no-repeat center center/cover;
+.clouds {
+  background: url('./img/cloudy.jpg') no-repeat center center/cover;
 }
 
-.app .night {
-  background: url('./img/night.jpg') no-repeat center center/cover;
+.rain {
+  background: url('./img/rain.jpg') no-repeat center center/cover;
+}
+.fog {
+  background: url('./img/fog.jpg') no-repeat center center/cover;
+}
+.thunder {
+  background: url('./img/thunder.jpg') no-repeat center center/cover;
+}
+.snow {
+  background: url('./img/snow.jpg') no-repeat center center/cover;
 }
 
 .app .search {
